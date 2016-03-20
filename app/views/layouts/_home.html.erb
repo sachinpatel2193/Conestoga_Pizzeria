@@ -34,14 +34,28 @@
                     </div>
                     <div class="collapse navbar-collapse" id="example">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Order</a></li>
+                            
+                            <li><a><span<%=link_to "Home", users_path(@user), :class=>"glyphicon glyphicon-home"%></span></a></li>
+                            <li><a><span<%=link_to "Order", new_order_path(@order), :class=>"glyphicon glyphicon-shopping-cart"%></span></a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></span>About us</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-earphone"></span>Contact us</a></li>
                         </ul>
                        
-                      <a class="btn btn-primary navbar-btn navbar-right" <%= link_to"Login", new_user_session_path(@user) %> </a>
+                      <a class="btn btn-success navbar-btn navbar-right" <%= link_to"Login", new_user_session_path(@user) %> </a>
+                         <% if user_signed_in? %>
+                         <div>
+                        <li>
                         
+                          
+                          <a class="btn btn-danger navbar-btn navbar-right"<%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
+                            <%= current_user.name %>
+                        </li>
+                          <% else %>
+                        <li>
+                          <%= link_to('Login', new_user_session_path)  %>  
+                        </li>
+                          <% end %>
+                          </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+ 
 
   # GET /orders
   # GET /orders.json
@@ -25,6 +26,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    
     @order = Order.new(order_params)
 
     respond_to do |format|
