@@ -13,35 +13,69 @@
 
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :province %><br>
-    <%= f.text_field :province %>
+    <%= f.text_field :province, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :postalcode %><br>
-    <%= f.text_field :postalcode %>
+    <%= f.text_field :postalcode, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :phonenumber %><br>
-    <%= f.text_field :phonenumber %>
+    <%= f.text_field :phonenumber, :class => "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
+    <%= f.label :size  %><br>
+    <%= f.radio_button :size, 'Small' %> Small<br />
+    <%= f.radio_button :size, 'Medium' %> Medium<br />
+    <%= f.radio_button :size, 'Large' %> Large<br />
+    <%= f.radio_button :size, 'X-Large' %> X-Large<br />
   </div>
   <div class="field">
     <%= f.label :crust %><br>
-    <%= f.text_field :crust %>
+    <%= f.radio_button :crust, 'Regular' %> Regular<br />
+    <%= f.radio_button :crust, 'Stuff_Crust' %> Stuff Crust<br />
+    <%= f.radio_button :crust, 'Crunchy_Thin' %> Crunchy Thin<br />
+    <%= f.radio_button :crust, 'Thick' %> Thick<br />
   </div>
   <div class="field">
     <%= f.label :toppings %><br>
-    <%= f.text_field :toppings %>
+    <%= check_box_tag 'order[toppings][]', 'Onion', checked('Onion'), id:'orders_toppings' %> 
+    <%= label_tag 'orders_toppings', 'Onion' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'GreenPepper', checked('GreenPepper'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'GreenPepper' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Pineapple', checked('Pineapple'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Pineapple' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Mashroom', checked('Mashroom'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Mashroom' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Tomato', checked('Tomato'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Tomato' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'GreenOlives', checked('GreenOlives'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'GreenOlives' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'BlackOlives', checked('BlackOlives'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'BlackOlives' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Chicken', checked('Chicken'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Chicken' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Bacon', checked('Bacon'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Bacon' %><br>
+    
+    <%= check_box_tag 'order[toppings][]', 'Ham', checked('Ham'), id:'orders_toppings' %>
+    <%= label_tag 'orders_toppings', 'Ham' %><br>
   </div>
   <div class="field">
     <%= f.label :numberofpizza %><br>
