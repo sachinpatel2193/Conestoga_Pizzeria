@@ -39,9 +39,11 @@
                             <li><a><span class="glyphicon glyphicon-heart-empty"></span>About us</a></li>
                             <li><a><span class="glyphicon glyphicon-earphone"></span>Contact us</a></li>
                         </ul>
+                        <div></div>
                         <% if !user_signed_in? %> 
                             <a class="btn btn-success navbar-btn navbar-right" <%= link_to"Login", new_user_session_path(@user) %> </a>
                         <% end %>
+                        </div>
                         <% if user_signed_in? %>
                             <div>
                                <a class="btn btn-danger navbar-btn navbar-right"<%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
@@ -50,19 +52,17 @@
                     </div>
                 </div>
             </div>
-
-            <div class="jumbotron">
-                <div class="container">
-                    <div class="col-md-8">
-                        <h1>Conestoga Pizzeria</h1>
-                        <h3>Good Friends. Great Pizza.</h3>
-                    </div>
-                    <div class="col-md-4">
-                     <!--   <img src="images/PizzaCoke.png" class="img-responsive">-->
+            <div class="container">
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="col-md-8">
+                            <h1>Conestoga Pizzeria</h1>
+                            <h3>Good Friends. Great Pizza.</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="content">
+            <div class="container">
                 <div class="custom">
                     <% if user_signed_in? %>
                     <h2> Hi <%= current_user.name %>, Welcome to Conestoga Pizzeria </h2>

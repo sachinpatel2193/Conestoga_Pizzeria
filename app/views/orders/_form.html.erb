@@ -10,34 +10,42 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address, :class => "form-control" %>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel panel-heading">
+        <span class="glyphicon glyphicon-map-marker"></span> Address Information
+      </div>
+      <div class="field">
+        <%= f.label :address %><br>
+        <%= f.text_field :address, :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :province %><br>
+        <%= f.text_field :province, :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :postalcode %><br>
+        <%= f.text_field :postalcode, :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :phonenumber %><br>
+        <%= f.text_field :phonenumber, :class => "form-control" %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city, :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :province %><br>
-    <%= f.text_field :province, :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :postalcode %><br>
-    <%= f.text_field :postalcode, :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :phonenumber %><br>
-    <%= f.text_field :phonenumber, :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :size  %><br>
-    <%= f.radio_button :size, 'Small' %> Small<br />
-    <%= f.radio_button :size, 'Medium' %> Medium<br />
-    <%= f.radio_button :size, 'Large' %> Large<br />
-    <%= f.radio_button :size, 'X-Large' %> X-Large<br />
-  </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :size  %><br>
+      <%= f.radio_button :size, 'Small' %> Small<br />
+      <%= f.radio_button :size, 'Medium' %> Medium<br />
+      <%= f.radio_button :size, 'Large' %> Large<br />
+      <%= f.radio_button :size, 'X-Large' %> X-Large<br />
+    </div>
+  </div>  
   <div class="field">
     <%= f.label :crust %><br>
     <%= f.radio_button :crust, 'Regular' %> Regular<br />
