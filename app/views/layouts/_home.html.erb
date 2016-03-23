@@ -13,7 +13,8 @@
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-        <!--<link rel="stylesheet" type="text/css" href="Styles/main.css">-->
+        
+        <!--<link rel="stylesheet" type="text/css" href="stylesheet/main.css">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <!--<script src="Scripts/myscript.js"></script> -->
@@ -39,16 +40,16 @@
                             <li><a><span class="glyphicon glyphicon-heart-empty"></span>About us</a></li>
                             <li><a><span class="glyphicon glyphicon-earphone"></span>Contact us</a></li>
                         </ul>
-                        <div></div>
+                        
                         <% if !user_signed_in? %> 
                             <a class="btn btn-success navbar-btn navbar-right" <%= link_to"Login", new_user_session_path(@user) %> </a>
                         <% end %>
-                        </div>
+                        
                         <% if user_signed_in? %>
-                            <div>
+                            
                                <a class="btn btn-danger navbar-btn navbar-right"<%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
                         <% end %>
-                          </div>
+                          
                     </div>
                 </div>
             </div>
@@ -63,11 +64,9 @@
                 </div>
             </div>
             <div class="container">
-                <div class="custom">
-                    <% if user_signed_in? %>
-                    <h2> Hi <%= current_user.name %>, Welcome to Conestoga Pizzeria </h2>
-                    <% end %>
-                </div>
+                <% if user_signed_in? %>
+                <h2> Hi <%= current_user.name %>, Welcome to Conestoga Pizzeria </h2>
+                <% end %>
             </div>
         </div>    
     </body>
