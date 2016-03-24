@@ -36,7 +36,12 @@
                     <div class="collapse navbar-collapse" id="example">
                         <ul class="nav navbar-nav">
                             <li><a><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                            <li><%=link_to "Order", new_order_path(@order), :class=>"glyphicon glyphicon-shopping-cart"%></li>
+                            <li><%=
+                            if(user_signed_in? && !current_user.admin?)
+                                link_to "Order", new_order_path(@order), :class=>"glyphicon glyphicon-shopping-cart"
+                            elsif
+                                link_to "Order", new_order_path(@order), :class=>"glyphicon glyphicon-shopping-cart"
+                            end%></li>
                             <li><a><span class="glyphicon glyphicon-heart-empty"></span>About us</a></li>
                             <li><a><span class="glyphicon glyphicon-earphone"></span>Contact us</a></li>
                         </ul>
@@ -48,6 +53,9 @@
                         <% if user_signed_in? %>
                             
                                <a class="btn btn-danger navbar-btn navbar-right"<%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
+                                  <% #if current_user.admin?%>
+                                  <%# render :file => "orders/index.html.erb" %>
+                                  <%#end%>
                         <% end %>
                           
                     </div>
@@ -60,11 +68,11 @@
                         <div class="col-md-8">
                             <h1>Conestoga Pizzeria</h1>
                             <h3>Good Friends. Great Pizza.</h3>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            
             
             <div class="container">
                 <% if user_signed_in? %>
@@ -72,7 +80,17 @@
                 <% end %>
                 
                 
-            
+                <%= if (user_signed_in? && current_user.admin?)
+                      link_to 'Show Orders', orders_path, :class => 'btn btn-success'
+                    end %>
+         
+                <%= if (user_signed_in? && current_user.admin?)
+                      link_to 'Show Users', users_path, :class => 'btn btn-success'
+                    end %>
+                    
+                <%= if (user_signed_in? && current_user.admin?)
+                      link_to 'Add User', new_user_path, :class => 'btn btn-success'
+                    end %> 
             </div>
             
         </div>    

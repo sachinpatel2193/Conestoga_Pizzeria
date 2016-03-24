@@ -2,9 +2,11 @@
 
 <h1>Listing Orders</h1>
 
-<table class="table table-condensed">
+<div class="table-striped">          
+  <table class="table">
   <thead>
     <tr>
+      <th>Order No.</th>
       <th>Address</th>
       <th>City</th>
       <th>Province</th>
@@ -23,6 +25,7 @@
     
    <% @orders.each do |order| %>
       <tr>
+        <td><%= order.id %></td>
         <td><%= order.address %></td>
         <td><%= order.city %></td>
         <td><%= order.province %></td>
@@ -33,14 +36,23 @@
         <td><%= order.toppings %></td>
         <td><%= order.numberofpizza %></td>
         <td><%= order.price %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+           <%= if (user_signed_in? && current_user.admin?)
+              label_tag(:status,"status")
+              select_tag "status","<option>UnComplete</option><option>Complete</option>".html_safe
+            end %>
+          
+          
+        </td>
+        
+        <td><a class="btn btn-success"<%= link_to 'Show', order %></a></td>
+        <td><a class="btn btn-primary"<%= link_to 'Edit', edit_order_path(order) %></a></td>
+        <td><%= link_to '', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to '', new_order_path %>

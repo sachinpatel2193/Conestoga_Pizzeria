@@ -5,6 +5,10 @@ class Order < ActiveRecord::Base
         self.toppings.gsub!(/[\[\]\"]/, "") if attribute_present?('toppings')
     end
     
+    before_save do
+        self.status.gsub!(/[\[\]\"]/, "") if attribute_present?('status')
+    end
+    
     validates :address, presence:true
     
     validates :city, presence: true
@@ -61,9 +65,10 @@ class Order < ActiveRecord::Base
             end
             
             @totalprice = @sizeprice + @crustprice + @toppingprice + @tax;
-            
+                
+                if attribute_present?("numberofpizza")
                  @totalprice=@totalprice*self.numberofpizza;
-            
+                end    
             
             @grandtotal= (@totalprice + (@tax * @totalprice));
             return @grandtotal
