@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :set_user, only:[:show, :edit, :update, :destroy]
 
+  def admin_check
+    if current_user.admin?
+      before_action:set_user, except:[:edit, :update, :destroy]
+    end
+  end
   # GET /users
   # GET /users.json
   

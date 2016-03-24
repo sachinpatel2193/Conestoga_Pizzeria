@@ -1,13 +1,17 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
+  <div class="alert alert-danger">
+    
+  
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h3><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h3>
 
       <ul>
       <% @order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
+    </div>
     </div>
   <% end %>
   <div class="container">
@@ -26,7 +30,7 @@
         </div>
         <div class="field">
           <%= f.label :province %><br>
-          <%= f.text_field :province, :class => "form-control" %>
+          <%= f.select(:province, options_for_select([['ON', 'ON'] , ['MB' , 'MB'], ['SK','SK' ], ['QB', 'QB'] ] ),{},{:class => "form-control"}) %>
         </div>
         <div class="field">
           <%= f.label :postalcode %><br>
@@ -69,10 +73,14 @@
         <div class="form-group">
           <div class="field">
             <%= f.label :size  %><br>
-            <%= f.radio_button :size, 'Small' %> Small<br />
-            <%= f.radio_button :size, 'Medium' %> Medium<br />
-            <%= f.radio_button :size, 'Large' %> Large<br />
-            <%= f.radio_button :size, 'X-Large' %> X-Large<br />
+            <%= f.radio_button :size, 'small', :id => 'field_with_error' %>
+            <%= label_tag(:small,"small") %><br>
+            <%= f.radio_button :size, 'medium', :id => 'field_with_error'  %>
+            <%= label_tag(:medium,"medium") %><br>
+            <%= f.radio_button :size, 'large', :id => 'field_with_error'  %>
+            <%= label_tag(:large,"large") %><br>
+            <%= f.radio_button :size, 'xlarge', :id => 'field_with_error'  %>
+            <%= label_tag(:xlarge,"xlarge") %><br>
           </div>
         </div>
       </div>

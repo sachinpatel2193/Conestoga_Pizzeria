@@ -53,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="container">
                 <div class="jumbotron">
                     <div class="container">
@@ -63,11 +64,17 @@
                     </div>
                 </div>
             </div>
+            
+            
             <div class="container">
                 <% if user_signed_in? %>
-                <h2> Hi <%= current_user.name %>, Welcome to Conestoga Pizzeria </h2>
+                <h2> Hi  <mark>  <%= current_user.name %> </mark>, Welcome to Conestoga Pizzeria </h2>
                 <% end %>
+                
+                
+            
             </div>
+            
         </div>    
     </body>
 </html>
