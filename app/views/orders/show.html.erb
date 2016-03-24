@@ -1,49 +1,66 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @order.city %>
-</p>
-
-<p>
-  <strong>Province:</strong>
-  <%= @order.province %>
-</p>
-
-<p>
-  <strong>Postalcode:</strong>
-  <%= @order.postalcode %>
-</p>
-
-<p>
-  <strong>Phonenumber:</strong>
-  <%= @order.phonenumber %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @order.size %>
-</p>
-
-<p>
-  <strong>Crust:</strong>
-  <%= @order.crust %>
-</p>
-
-<p>
-  <strong>Toppings:</strong>
-  <%= @order.toppings %>
-</p>
-
-<p>
-  <strong>Numberofpizza:</strong>
-  <%= @order.numberofpizza %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> 
-<%= link_to 'Back', orders_path %>
+  <div class="container">
+    <div class="content">
+    
+    <div class="col-md-12">
+      <div class="panel panel-success">
+      <div class="panel-heading"> Your Order Summary </div>
+      <div class="panel-body">
+        
+        <p>
+          <strong>Address:</strong>
+          <%= @order.address %>
+        </p>
+        
+        <p>
+          <strong>City:</strong>
+          <%= @order.city %>
+        </p>
+        
+        <p>
+          <strong>Province:</strong>
+          <%= @order.province %>
+        </p>
+        
+        <p>
+          <strong>Postalcode:</strong>
+          <%= @order.postalcode %>
+        </p>
+        
+        <p>
+          <strong>Phonenumber:</strong>
+          <%= @order.phonenumber %>
+        </p>
+        
+        <p>
+          <strong>Size:</strong>
+          <%= @order.size %>
+        </p>
+        
+        <p>
+          <strong>Crust:</strong>
+          <%= @order.crust %>
+        </p>
+        
+        <p>
+          <strong>Toppings:</strong>
+          <%= @order.toppings %>
+        </p>
+        
+        <p>
+          <strong>Numberofpizza:</strong>
+          <%= @order.numberofpizza %>
+        </p>
+        
+        <p>
+          <strong>Price:</strong>
+          <%= @order.price %>
+        </p>
+  
+        <a class="btn btn-success navbar-btn" <%= link_to 'Edit', edit_order_path(@order) %> </a>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
