@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160324005110) do
     t.datetime "updated_at",                null: false
     t.integer  "user_id",       limit: 4
     t.float    "price",         limit: 24
+    t.boolean  "status"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree

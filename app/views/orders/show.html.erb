@@ -56,6 +56,11 @@
           <strong>Price:</strong>
           <%= @order.price %>
         </p>
+        
+        <p>
+          <strong>id:</strong>
+          <%= current_user.id %>
+        </p>
   
         <a class="btn btn-success navbar-btn" <%= link_to 'Edit', edit_order_path(@order) %> </a>
        

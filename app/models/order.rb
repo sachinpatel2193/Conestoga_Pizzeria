@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
-     belongs_to:user
+     belongs_to :user
+     has_and_belongs_to_many:users
      #validates :user_id, presence: true
      before_save do
         self.toppings.gsub!(/[\[\]\"]/, "") if attribute_present?('toppings')
