@@ -36,7 +36,7 @@
         <td><%= order.toppings %></td>
         <td><%= order.numberofpizza %></td>
         <td><%= order.price %></td>
-        <td><%= current_user.id%></td>
+       
         <td>
            <%= if (user_signed_in? && current_user.admin?)
               label_tag(:status,"status")
