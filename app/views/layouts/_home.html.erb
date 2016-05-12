@@ -43,7 +43,7 @@
                                 link_to "Order", new_order_path(@order), :class=>"glyphicon glyphicon-shopping-cart"
                             end%></li>
                             <li><a><span class="glyphicon glyphicon-heart-empty"></span>About us</a></li>
-                            <li><a><span class="glyphicon glyphicon-earphone"></span>Contact us</a></li>
+                            <li><%= link_to "Contact Us", contact_us_contact_path %></li>
                         </ul>
                         
                         <% if !user_signed_in? %> 

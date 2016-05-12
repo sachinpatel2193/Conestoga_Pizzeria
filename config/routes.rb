@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contact_us/contact'
+
   get 'home/index'
 
   get 'app/assets/views/orders/index.html.erb', to: "users#admin_check"
